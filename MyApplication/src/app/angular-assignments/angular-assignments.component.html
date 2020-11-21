@@ -1,0 +1,155 @@
+<!-- Interpolation does not works with boolean values -->
+<!-- Interpolation -->
+<!-- <h1>{{message}}</h1>
+<h1>{{name}}</h1>
+<h1>{{5+5+5}}</h1>
+<h1>{{message+name}}</h1>
+<h1>{{"Length of name="+name.length}}</h1>
+<h1>{{getData()}}</h1>
+<h1>{{name? name:"no name"}}</h1> -->
+<!-- <img src='{{path}}'>-->
+<!-- <input type="text" disabled='{{isdisabled}}' value="Using interpolation">
+ -->
+<!-- Property binding -->
+<!--<img [src]="path">  -->
+<!-- <input type="text" [disabled]='isdisabled' value="Using property binding">
+ -->
+<!-- Canonical Syntax(Without using square brackets) -->
+<!-- <input type="text" bind-disabled='isdisabled' value="Using canonical syntax">
+
+ --><!-- Attribute binding -->
+<!-- <table border=3 width=75>
+    <tr>
+ -->        <!-- <td colspan="{{3}}"></td> [Gives error]-->
+<!--         <td [attr.colspan]="3">Using Attribute binding</td>    
+    </tr>
+    <tr>
+        <td>Interpolation</td>
+        <td>Property</td>
+        <td>Event</td>
+    </tr>
+</table>
+<br>
+<br>
+ --><!-- Event Binding -->
+
+<!-- <button (click)="getCity('Pune')">OK</button>
+ --><!-- <h1>{{city}}</h1> -->
+
+<!--Nested Component -->
+<!-- <h1>Employee component running</h1>
+<app-employee-crud></app-employee-crud> -->
+
+
+<!-- Two way data binding -->
+<!-- Name:<input [(ngModel)]="name"> <br><br>
+You entered:{{name}}
+<br>
+<br>
+Name:<input [value]='name' (input)='name=$event.target.value'/> <br><br>
+You entered:{{name}}
+ -->
+
+ <!-- CSS Binding -->
+<!--  <button [class]='classtoapply'>Click Here</button><br><br>
+ <button class='colorClass' [class.boldClass]='isapply'>My click</button>
+ <br>
+ <button class='colorClass' [class.boldClass]='!isapply'>Another My click</button>
+ <br><br>
+ <button [class.boldClass]='isapply'>simple click</button>
+ <br>
+ <br>
+ <p [class.colorClass]='isapply'>This is first paragraph</p>
+ <p class='colorClass' [class.boldClass]='isapply'>This is second paragraph</p>
+ <p [class]='classtoapply'>This is third paragraph</p>
+ -->
+
+<!--  <button [ngClass]='applyChange()'>MyClass</button>
+ <p [ngClass]='applyChange()'>This is my paragraph</p>
+ -->
+ <!-- Style Binding -->
+
+<!--  <p [style.font-size.px]='25'>Font size</p>
+ -->
+<!--  <button [style.font-style]="isItalic?'italic':normal"></button> -->
+<!-- <p [style.font-style]="isItalic?'italic':'normal'">This is my style para</p> -->
+
+<!-- <p [ngStyle]='applyStyle()'>This is my style object</p>
+
+<button [ngStyle]='applyStyle()'>This is my button style</button>
+<p [style.font-style]="isItalic?'italic':'normal'">My first italic</p>
+<p [style.font-style]="isItalic1?'italic':'normal'">My second italic</p>
+ -->
+
+
+ <!-- Directives -->
+ <button (click)="show=!show">{{show?'show':'hide'}}</button>
+ show={{show}}
+
+ <br>
+ <br>
+ <!-- <div *ngIf="show">Structural directive</div>
+  -->
+  <!-- <div *ngIf="show;else elseBlock">If Block Running</div>
+ <ng-template #elseBlock>Else Block Running</ng-template>
+ -->
+ <div>
+<!-- Enter your age:<input type="text" [(ngModel)]="age"</div><br>
+ <div *ngIf="age<18;else elseBlock"><b>You are not eligible</b></div>
+<ng-template #elseBlock><b>You are eligible</b></ng-template>
+ -->
+<!--  <div>Enter age:<input type="text" [(ngModel)]="age"></div>
+ --> <div *ngIf="age<18 then thenBlock;else elseAgeBlock"></div>
+<ng-template #thenBlock><b>You are not eligible</b></ng-template>
+<ng-template #elseAgeBlock><b>Congrats you are eligible</b></ng-template> 
+
+<table>
+    <tr>
+        <td>{{name}}</td>
+        <td>{{city}}</td>
+    </tr>
+    <tr *ngIf="show">
+        <td>{{age}}</td>
+        <td>{{gender}}</td>
+    </tr>
+</table>
+<button (click)="togetDetails()">Show details</button>
+<!-- <div >Enter Color:<input type="text" [(ngModel)]="color">
+ --><div [ngSwitch]="color">
+    <div *ngSwitchCase="'green'">Green selected</div>
+    <div *ngSwitchCase="'red'">Red selected</div>
+    <div *ngSwitchCase="'blue'">Blue selected</div>
+    <div *ngSwitchDefault>Nothing selected</div>
+</div>
+
+<table>
+    <th>Index</th>
+    <th>Code</th>
+    <th>Name</th>
+    <th>Salary</th>
+    <!-- <tr *ngFor="let emp of employees;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{emp.ecode}}</td>
+        <td>{{emp.ename}}</td>
+        <td>{{emp.salary}}</td>
+
+    </tr>
+  -->
+  <tr *ngFor="let emp of employees;trackBy:trackbyemp">
+    <td>{{emp.ecode}}</td>
+    <td>{{emp.ename}}</td>
+    <td>{{emp.salary}}</td>
+
+</tr>
+
+     <tr *ngIf="!employees||employees.length==0">
+        <td colspan="4">No employee present</td>
+    </tr>
+</table>
+<br>
+<button (click)="getEmployees()">Get employee details</button>
+<br>
+<button [ngClass]="applyClass()">Myclass</button>
+<br>
+<br>
+<button [ngStyle]="applyStyle()">MyStyle</button>

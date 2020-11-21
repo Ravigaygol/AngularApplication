@@ -1,0 +1,65 @@
+<h1 *ngIf="status">{{appTitle}} to th world of directive demo</h1>
+<div *ngIf="flag1; then thenblock else msgElseBlock">
+</div>
+<ng-template #msgElseBlock>
+<div>Else Block:No data</div>
+</ng-template>
+<ng-template #thenblock>
+    <div>Then Block: data available</div>
+    </ng-template>
+  <h2>Using ngFor</h2>
+  <table class="table table-bordered">
+<tr *ngFor='let i of arr'>
+    <td>{{i}}</td>
+</tr>
+  </table> 
+  <ul>
+      <li *ngFor="let i of arrString">{{i}}</li>
+  </ul>
+  <ol>
+      <li *ngFor="let p of person">
+          {{p.pname}}
+          <ol>
+              <li *ngFor="let f of p.flat">{{f.flatid}}</li>
+          </ol>
+
+      </li>
+  </ol>
+  <ol>
+<hr>
+    <li *ngFor="let e of Employee">
+        {{e.ename}}
+        <ol>
+            <li *ngFor="let s of e.stud">{{s.sid}}</li>
+        </ol>
+    </li>
+</ol>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+        <th>Index</th>
+        <th>Employee-id</th>
+        <th>Employee-name</th>
+        <th>Employee-salary</th>
+        <th>Isfirst</th>
+        <th>IsLast</th>
+        <th>IsEven</th>
+        <th>IsOdd</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let employee of emp;let i=index;let isFirst=first;
+         let isLast=last;let isEven=even;let isOdd=odd'>
+         <td>{{i+1}}</td>
+         <td>{{employee.empid}}</td>
+         <td>{{employee.empname}}</td>
+         <td>{{employee.empsal}}</td>
+         <td>{{isFirst}}</td>
+         <td>{{isLast}}</td>
+         <td>{{isEven}}</td>
+         <td>{{isOdd}}</td>
+
+        </tr>
+    </tbody>
+      </table> 
+     

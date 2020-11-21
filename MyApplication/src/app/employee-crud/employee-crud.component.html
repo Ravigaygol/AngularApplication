@@ -1,0 +1,64 @@
+<h1 style="background-color: gold;">{{title}}</h1>
+<table class="center">
+<tr>
+    <td>Employee-ID</td>
+    <td>
+        <input type="number" [(ngModel)]="empid"/>
+    </td>
+</tr> 
+<tr>
+    <td>Employee-Name</td>
+    <td>
+        <input type="text" [(ngModel)]="empname"/>
+    </td>
+</tr> 
+<tr>
+    <td>Employee-Salary</td>
+    <td>
+        <input type="number" [(ngModel)]="empsal"/>
+    </td>
+</tr> 
+<tr>
+    <td>Employee-Department</td>
+    <td>
+        <input type="text" [(ngModel)]="empDept"/>
+    </td>
+</tr> 
+
+</table>
+<div class="container">
+<button (click)="AddEmp()" *ngIf="isAdd">ADD</button>
+</div>
+<div class="container">
+<button (click)="UpdateEmp()" *ngIf="isEdit">UPDATE</button>
+</div>
+
+<!-- <table *ngIf="isAdd">
+ -->
+ <div *ngIf="employees.length>0">
+ <table>
+ <thead>
+    <tr>
+        <th colspan="100%">Employee Data</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th></th>
+        <th>Employee-ID</th>
+        <th>Employee-Name</th>
+        <th>Employee-Salary</th>
+        <th>Employee-Department</th>
+    </tr>
+</thead>
+<tbody class="container">
+    <tr *ngFor="let em of employees; let i=index">
+    <td><button><a (click)="DeleteEmp(i)">Delete</a></button></td>
+    <td><button><a (click)="EditEmp(i)">EDIT</a></button></td>
+    <td>{{em.empid}}</td>
+    <td>{{em.empname}}</td>
+    <td>{{em.empsal}}</td>
+    <td>{{em.empDept}}</td>
+</tr>
+</tbody>
+</table>
+</div>

@@ -1,0 +1,11 @@
+
+table
+{  
+    border: solid 1px;
+    border-color: chocolate;
+}
+th,td
+{
+    border:solid 3px;
+    text-align: center;
+}
