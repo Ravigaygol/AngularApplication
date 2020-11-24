@@ -1,0 +1,14 @@
+<div>
+    <h2>Search Product</h2>
+    
+    <app-product-list [flag2]=flag (p)='onNotify($event)'> </app-product-list>
+    <div *ngIf="flag1">
+            <div *ngIf="flag; else elseBlock">
+               <h3 style="color: chartreuse;">Product Available</h3>
+            </div>
+            <ng-template #elseBlock>
+                <h3 style="color:gainsboro ; background-color: red;">Product Not Available</h3>
+
+            </ng-template>
+    </div>
+</div>

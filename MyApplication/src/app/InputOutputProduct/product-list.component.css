@@ -1,0 +1,31 @@
+input
+{
+    text-align: center;
+    width: 300px;
+    margin: auto;
+    margin-left: 530px;
+    border-radius: 15px;
+}
+/* button
+{
+    margin-left: 530px;
+    width: 150px;
+    text-align: center;
+    border-radius: 10px;
+    
+} */
+#btn
+ {
+    margin-left: 530px;
+     background-color: red;
+     color: rgb(241, 241, 8);
+     font-size: 20px;
+     font-style: unset;
+     height: 30px;
+     width: 150px;
+     border-radius: 0px 25px;
+ }
+#btn:hover
+{
+    background-color: blue;
+}

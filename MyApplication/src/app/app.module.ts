@@ -25,6 +25,10 @@ import { AddchildComponent } from './OutputDecorator/addchild/addchild.component
 import { MsgComponent } from './databinding/msg.component';
 import { TestPipeComponent } from './test-pipe/test-pipe.component';
 import { AttributeDemoComponent } from './attribute-demo/attribute-demo.component';
+import { CustomerListComponent } from './InputOutputCustomer/customer-list.component';
+import { CustomerDetailsComponent } from './InputOutputCustomer/customer-details.component';
+import { ProductListComponent } from './InputOutputProduct/product-list.component';
+import { ProductDetailsComponent } from './InputOutputProduct/product-details/product-details.component';
 
 
 @NgModule({
@@ -49,7 +53,11 @@ import { AttributeDemoComponent } from './attribute-demo/attribute-demo.componen
     AddchildComponent,
     MsgComponent,
     TestPipeComponent,
-    AttributeDemoComponent
+    AttributeDemoComponent,
+    CustomerListComponent,
+    CustomerDetailsComponent,
+    ProductDetailsComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
