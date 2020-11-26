@@ -37,6 +37,8 @@ import { PersonComponent } from './FormsDemo/person/person.component';
 import { CustomvalidComponent } from './FormsDemo/CustomValidator/customvalid/customvalid.component';
 import { ModelFormComponent } from './ModelDrivenDemo/model-form/model-form.component';
 import { TemplateFormComponent } from './TemplateDrivenDemo/template-form/template-form.component';
+import { HelloMessageComponent } from './HelloServiceDemo/hello-message/hello-message.component';
+import { ProductComComponent } from './ProductServiceDemo/product-com/product-com.component';
 
 
 @NgModule({
@@ -73,7 +75,9 @@ import { TemplateFormComponent } from './TemplateDrivenDemo/template-form/templa
     PersonComponent,
     CustomvalidComponent,
     ModelFormComponent,
-    TemplateFormComponent
+    TemplateFormComponent,
+    HelloMessageComponent,
+    ProductComComponent
   ],
   imports: [
     BrowserModule,
