@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MyCalculatorComponent } from './my-calculator/my-calculator.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MyBankAppComponent } from './MyBankApp/bank.component';
 import { MyLoginAppComponent } from './MyLoginForm/login.component';
 import { ngIFComponent } from './TestIF/testngIf.component';
@@ -29,6 +29,14 @@ import { CustomerListComponent } from './InputOutputCustomer/customer-list.compo
 import { CustomerDetailsComponent } from './InputOutputCustomer/customer-details.component';
 import { ProductListComponent } from './InputOutputProduct/product-list.component';
 import { ProductDetailsComponent } from './InputOutputProduct/product-details/product-details.component';
+import { ValidFormComponent } from './FormsDemo/valid-form/valid-form.component';
+import { ContactComponent } from './FormsDemo/contact/contact.component';
+import { CheckboxdemoComponent } from './FormsDemo/checkboxdemo/checkboxdemo.component';
+import { ModelContactComponent } from './FormsDemo/model-contact/model-contact.component';
+import { PersonComponent } from './FormsDemo/person/person.component';
+import { CustomvalidComponent } from './FormsDemo/CustomValidator/customvalid/customvalid.component';
+import { ModelFormComponent } from './ModelDrivenDemo/model-form/model-form.component';
+import { TemplateFormComponent } from './TemplateDrivenDemo/template-form/template-form.component';
 
 
 @NgModule({
@@ -57,11 +65,20 @@ import { ProductDetailsComponent } from './InputOutputProduct/product-details/pr
     CustomerListComponent,
     CustomerDetailsComponent,
     ProductDetailsComponent,
-    ProductListComponent
+    ProductListComponent,
+    ValidFormComponent,
+    ContactComponent,
+    CheckboxdemoComponent,
+    ModelContactComponent,
+    PersonComponent,
+    CustomvalidComponent,
+    ModelFormComponent,
+    TemplateFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,FormsModule, NgbModule
+    AppRoutingModule,FormsModule, NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
    bootstrap: [AppComponent]

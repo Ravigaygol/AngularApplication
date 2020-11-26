@@ -1,0 +1,121 @@
+<div class="container">
+  <div style="margin: 8px">
+    <h1 class="ion-text-center"><strong>Register Here</strong></h1>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+
+      <div class="form-group">
+        <label for="firstname">First Name </label>
+        <input type="text" class="form-control" id="firstname" name="firstname" formControlName="firstname">
+      </div>
+      <!-- <div *ngIf="!firstname.valid && (firstname.dirty ||firstname.touched)">
+      First Name is not valid
+  </div> -->
+      <div style="color: red;" class="alert alert-danger"
+        *ngIf="!contactForm.controls.firstname?.valid && (contactForm.controls.firstname?.dirty ||contactForm.controls.firstname?.touched)">
+        <div [hidden]="!contactForm.controls.firstname.errors.required">First Name is required </div>
+        <div [hidden]="!contactForm.controls.firstname.errors.minlength"> First Name Minimum Length is
+          {{contactForm.controls.firstname.errors.minlength?.requiredLength}} </div>
+      </div>
+      <div class="form-group">
+        <label for="lastname">Last Name </label>
+        <input type="text" class="form-control" id="lastname" name="lastname" formControlName="lastname">
+      </div>
+      <div style="color: red;" class="alert-danger"
+        *ngIf="!contactForm.controls.lastname ?.valid && (contactForm.controls.lastname ?.dirty || contactForm.controls.lastname ?.touched)">
+        <div [hidden]="!contactForm.controls.lastname.errors.required">Lastname is required</div>
+        <!--  <div [hidden]="!lastname.errors.maxLength">
+      Max length allowed is {{lastname.errors.maxlength?.requiredLength}} 
+    </div> -->
+        <div [hidden]="!contactForm.controls.lastname.errors.maxlength">Last Name Maximum length is
+          {{contactForm.controls.lastname.errors.maxlength?.requiredLength}}</div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email </label>
+        <input type="text" class="form-control" id="email" name="email" formControlName="email">
+      </div>
+      <div style="color: red;" class="alert alert-danger"
+        *ngIf="!contactForm.controls.email ?.valid && (contactForm.controls.email ?.dirty || contactForm.controls.email ?.touched)">
+        <div [hidden]="!contactForm.controls.email.errors.required">
+          Email id is required
+        </div>
+        <div [hidden]="!contactForm.controls.email.errors.required.email">
+          Email id is not valid
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label for="gender">Geneder </label>
+        <input sty type="radio" class="form-control" value="male" id="gender" name="gender" formControlName="gender">Male
+        <input type="radio" class="form-control" value="female" id="gender" name="gender" formControlName="gender">Female
+      </div>
+      <div style="color: red;" class="alert alert-danger"
+        *ngIf="!contactForm.controls.gender ?.valid && (contactForm.controls.gender ?.dirty || contactForm.controls.gender ?.touched)">
+        <div [hidden]="!contactForm.controls.gender.errors.required">
+          Gender is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="isMarried">Married </label>
+        <input type="checkbox" class="form-control" id="isMarried" name="isMarried" formControlName="isMarried">
+      </div>
+      <div style="color: red;" class="alert alert-danger"
+        *ngIf="!contactForm.controls.isMarried ?.valid && (contactForm.controls.isMarried ?.dirty || contactForm.controls.isMarried ?.touched)">
+        <div [hidden]="!contactForm.controls.isMarried.errors.required">
+          isMarried is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="country">country </label>
+        <select id="country" class="form-control" name="country" formControlName="country">
+          <option [ngValue]="c.id" *ngFor="let c of countryList">
+            {{c.name}}
+          </option>
+        </select>
+      </div>
+      <div style="color: red;" class="alert alert-danger"
+        *ngIf="!contactForm.controls.country ?.valid && (contactForm.controls.country ?.dirty || contactForm.controls.country ?.touched)">
+        <div [hidden]="!contactForm.controls.country.errors.required">
+          country is required
+        </div>
+      </div>
+      <div formGroupName="address">
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" class="form-control" name="city" formControlName="city">
+        </div>
+        <div style="color: red;" class="alert alert-danger"
+          *ngIf="!contactForm.controls['address'].get('city') ?.valid && (contactForm.controls['address'].get('city')?.dirty || contactForm.controls['address'].get('city')  ?.touched)">
+          <div [hidden]="!contactForm.controls['address'].get('city') .errors.required">
+            city is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="street">Street</label>
+          <input type="text" class="form-control" name="street" formControlName="street">
+        </div>
+        <div style="color: red;" class="alert alert-danger"
+          *ngIf="!contactForm.controls['address'].get('street').valid && (contactForm.controls['address'].get('street').dirty || contactForm.controls['address'].get('street').touched)">
+          <div [hidden]="!contactForm.controls['address'].get('street') .errors.required">
+            street is required
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="pincode">Pin Code</label>
+          <input type="text" class="form-control" name="pincode" formControlName="pincode">
+        </div>
+        <div style="color: red;" class="alert alert-danger"
+          *ngIf="!contactForm.controls['address'].get('pincode').valid && (contactForm.controls['address'].get('pincode')  ?.dirty || contactForm.controls['address'].get('pincode')  ?.touched)">
+          <div [hidden]="!contactForm.controls['address'].get('pincode') .errors.required">
+            pincode is required
+          </div>
+        </div>
+      </div>
+      <div>
+        <button type="submit" [disabled]="!contactForm.valid">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+<h2>Form</h2>
+<br> {{contactForm.value | json}} <br>
