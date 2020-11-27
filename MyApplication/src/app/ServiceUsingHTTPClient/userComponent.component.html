@@ -1,0 +1,19 @@
+<button (click)="getUsersFromService()">Call Service</button>
+<div>
+<table class='table' border="4">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Avatar</th>
+        <th>name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dt of data;">
+        <td>{{dt.id}}</td>
+        <td><a href="Avatar :{{dt.avatar_url}}">{{dt.avatar_url}}</a></td>
+        <td>{{dt.login}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -44,6 +44,9 @@ import { SecondObservableComponent } from './ObservableDemo/second-observable/se
 import { HttpClientDemoComponent } from './ObservableDemo/http-client-demo/http-client-demo.component';
 import { MyObservableComponent } from './MyObservableDemo/my-observable/my-observable.component';
 import { ObservableFunctionsComponent } from './ObservableCreationFunctions/observable-functions/observable-functions.component';
+import { ObservableEventComponent } from './ObservableEventDemo/observable-event/observable-event.component';
+import { UserComponent } from './ServiceUsingHTTPClient/userComponent.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -87,12 +90,14 @@ import { ObservableFunctionsComponent } from './ObservableCreationFunctions/obse
     SecondObservableComponent,
     HttpClientDemoComponent,
     MyObservableComponent,
-    ObservableFunctionsComponent
+    ObservableFunctionsComponent,
+    ObservableEventComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,FormsModule, NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,HttpClientModule
   ],
   providers: [],
    bootstrap: [AppComponent]
