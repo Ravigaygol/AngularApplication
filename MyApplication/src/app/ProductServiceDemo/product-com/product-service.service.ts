@@ -5,6 +5,9 @@ import { Product } from '../product';
   providedIn: 'root'
 })
 export class ProductServiceService {
+productID:number;
+productname:string;
+productprice:number;  
 public getProductList()
 {
   let products:Product[];

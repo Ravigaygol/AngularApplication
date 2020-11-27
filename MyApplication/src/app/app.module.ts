@@ -39,6 +39,9 @@ import { ModelFormComponent } from './ModelDrivenDemo/model-form/model-form.comp
 import { TemplateFormComponent } from './TemplateDrivenDemo/template-form/template-form.component';
 import { HelloMessageComponent } from './HelloServiceDemo/hello-message/hello-message.component';
 import { ProductComComponent } from './ProductServiceDemo/product-com/product-com.component';
+import { FirstObservableComponent } from './ObservableDemo/first-observable/first-observable.component';
+import { SecondObservableComponent } from './ObservableDemo/second-observable/second-observable.component';
+import { HttpClientDemoComponent } from './ObservableDemo/http-client-demo/http-client-demo.component';
 
 
 @NgModule({
@@ -77,7 +80,10 @@ import { ProductComComponent } from './ProductServiceDemo/product-com/product-co
     ModelFormComponent,
     TemplateFormComponent,
     HelloMessageComponent,
-    ProductComComponent
+    ProductComComponent,
+    FirstObservableComponent,
+    SecondObservableComponent,
+    HttpClientDemoComponent
   ],
   imports: [
     BrowserModule,
