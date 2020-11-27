@@ -42,6 +42,8 @@ import { ProductComComponent } from './ProductServiceDemo/product-com/product-co
 import { FirstObservableComponent } from './ObservableDemo/first-observable/first-observable.component';
 import { SecondObservableComponent } from './ObservableDemo/second-observable/second-observable.component';
 import { HttpClientDemoComponent } from './ObservableDemo/http-client-demo/http-client-demo.component';
+import { MyObservableComponent } from './MyObservableDemo/my-observable/my-observable.component';
+import { ObservableFunctionsComponent } from './ObservableCreationFunctions/observable-functions/observable-functions.component';
 
 
 @NgModule({
@@ -83,7 +85,9 @@ import { HttpClientDemoComponent } from './ObservableDemo/http-client-demo/http-
     ProductComComponent,
     FirstObservableComponent,
     SecondObservableComponent,
-    HttpClientDemoComponent
+    HttpClientDemoComponent,
+    MyObservableComponent,
+    ObservableFunctionsComponent
   ],
   imports: [
     BrowserModule,
